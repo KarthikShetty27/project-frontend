@@ -1,0 +1,31 @@
+/* NAVBAR | PORTFOLIO WEBSITE */
+
+/* Blue sqaure in the about page */
+.dot{
+    margin-top: 7px;
+}
+a{
+    padding: 10px;
+    margin: 15px 5px;
+}
+.Name, .nav-link{
+    font-family: 'Merienda One', serif;
+    font-size: 21px;
+}
+.navbutton{
+  width: 100px;
+  padding: 0px;
+}
+
+@media screen and (width < 1018px){
+  .navbutton{
+    width: 70px;
+    border: none;
+  }
+}
+@media screen and (width < 519px){
+  .navbutton{
+    width: 50px;
+  }
+}
+

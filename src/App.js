@@ -12,6 +12,7 @@ const App = () => {
         <Navbar />
         <div className="container">
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/form-input" element={<FormInput />} />
             <Route path="/form-result" element={<FormResult />} />
