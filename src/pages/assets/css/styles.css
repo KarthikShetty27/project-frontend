@@ -1,0 +1,60 @@
+/* CSS for App.js Start */
+.container{
+    border: 5px solid teal;
+    margin: 10px;
+}
+
+/* CSS for HomePage.js [About + Input + Output] Start */
+#home-page{
+    border: 1px dashed teal;
+    padding: 12px 0px;
+}
+
+/* CSS common for Home.js, FormInput.js, FormOutput.js  Start */
+#home, #finput, #foutput {
+    border: 1px dashed black;
+    width: auto;
+    height: 500px;
+    margin: 10px 0px;
+}
+
+/* CSS for Home.js  Start */
+#home {
+    background-color: greenyellow;
+    padding: 10px;
+}
+
+/* CSS common for FormInput.js, FormOutput.js  Start */
+#finput, #foutput{
+    background-color: blue;
+    width: 50%;
+    height: auto;
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+}
+
+/* CSS for FormInput.js  Start */
+#finput{
+    background-color:yellow;
+}
+
+
+/* CSS for FormOutput.js  Start */
+#foutput {
+    background-color: orange;
+
+}
+
+/* Media Query for largeScreen */
+/* @media screen and (width > 1018px) {  */
+    
+/* Media Query for smallScreen */
+@media screen and (width < 1018px) {
+    #finput, #foutput{
+        border: 3px solid cyan;
+        background-color: blue;
+        width: 100%;
+        display: inline-block;
+    }
+}
