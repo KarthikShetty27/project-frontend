@@ -1,0 +1,14 @@
+.Bottom-Container{
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 20px;
+    /* border: 2px solid black; */
+    font-family: 'Merienda One', serif;
+    font-size: 21px;
+}
+.footer{
+    text-align: center;
+}
+.MonthandYear{
+    margin: 0px;
+}
