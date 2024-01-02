@@ -105,7 +105,7 @@ const FormInput = () => {
 
   return (
     <div id="finput">
-      <h2 class="form_name">Prediction Form Input</h2>
+      <h2 className="form_name">Prediction Form Input</h2>
       <br />
       <div>
         <form onSubmit={handleSubmit}>
@@ -177,4 +177,4 @@ const FormInput = () => {
 };
 
 export default FormInput;
-export { formData };
+export { FormResults };
