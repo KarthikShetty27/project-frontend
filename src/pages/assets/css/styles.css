@@ -1,8 +1,9 @@
 /* CSS for App.js Start */
 .container{
     border: 5px solid teal;
-    margin: 10px;
+    margin: 10px auto;
 }
+/* ***************** */
 
 /* CSS for HomePage.js [About + Input + Output] Start */
 #home-page{
@@ -10,51 +11,105 @@
     padding: 12px 0px;
 }
 
+.Form-IO{
+    display: flex;
+}
+
+/* Media Query for smallScreen */
+@media screen and (width < 1018px) {
+    .Form-IO{
+        display: inline-block;
+    }    
+}
+/* ***************** */
+
 /* CSS common for Home.js, FormInput.js, FormOutput.js  Start */
 #home, #finput, #foutput {
     border: 1px dashed black;
     width: auto;
-    height: 500px;
-    margin: 10px 0px;
 }
+/* ***************** */
 
 /* CSS for Home.js  Start */
 #home {
     background-color: greenyellow;
-    padding: 10px;
+    height: 600px;
+    padding: 20px;
+    margin: 10px 0px;
 }
+/* ***************** */
 
 /* CSS common for FormInput.js, FormOutput.js  Start */
 #finput, #foutput{
-    background-color: blue;
     width: 50%;
-    height: auto;
-    display: inline-block;
+    height: 650px;
     padding: 20px;
     text-align: center;
+    margin: 20px 20px ;
 }
 
-/* CSS for FormInput.js  Start */
-#finput{
-    background-color:yellow;
-}
-
-
-/* CSS for FormOutput.js  Start */
-#foutput {
-    background-color: orange;
-
-}
-
-/* Media Query for largeScreen */
-/* @media screen and (width > 1018px) {  */
-    
 /* Media Query for smallScreen */
 @media screen and (width < 1018px) {
     #finput, #foutput{
         border: 3px solid cyan;
         background-color: blue;
         width: 100%;
+        height: auto;
         display: inline-block;
+        margin: 10px 0px;
     }
 }
+/* ***************** */
+
+/* CSS for FormInput.js  Start */
+#finput{
+    background-color:yellow;
+    font-family: serif;
+}
+
+.form-control {
+color: gray;
+text-align: center;
+background-color: white;
+border: 1px solid black;
+}
+
+.form-control-option{
+    text-align: left;
+    color: gray;
+}
+
+.has-error .form-control {
+border-color: #f00;
+}
+
+.error-help-text {
+color: red;
+font-weight: bold;
+font-style: italic;
+}
+
+.btn-primary {
+color: white;
+background-color: #007bff;
+border-color: #007bff;
+}
+
+.btn-primary:hover {
+color: #fff;
+background-color: #0056b3;
+border-color: #004d99;
+}
+/* ***************** */
+
+/* CSS for FormOutput.js  Start */
+#foutput {
+    background-color: orange;
+}
+/* ***************** */
+
+/* Media Query for largeScreen */
+/* @media screen and (width > 1018px) { } */
+    
+/* Media Query for smallScreen */
+/* @media screen and (width < 1018px) { } */

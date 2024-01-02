@@ -1,13 +1,10 @@
+// Footer.js
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS
 import './assets/css/Footer.css'; // Import the CSS from styles.css file
-
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     const currentMonth = new Date().toLocaleString('en-US', { month: 'long' });
-
 
   return (
     <div className="Bottom-Container ">
@@ -19,6 +16,5 @@ const Footer = () => {
     </div>
   );
 };
-
 
 export default Footer;
