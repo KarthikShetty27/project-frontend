@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello There !!</h2>
+    <form action="">
+        {/* Age */}
+        <div  className="form-group row">
+           <label for="Age"  className="col-sm-4 col-form-label">Age: </label>
+           <div  className="col-sm-8">
+             <input type="age"  className="form-control" id="Age" placeholder="Between 19-26" required />
+           </div>
+        </div><br />
+        {/* SEB - Socioeconomic Background */}
+        <div  className="form-group row">
+           <label for="SEB"  className="col-sm-5 col-form-label">Socioeconomic Background: </label>
+           <div  className="col-sm-7">
+             <select id="inputState"  className="form-control" required>
+                 <option value=""> Select Menu </option>
+                 <option value="Open"> Open </option>
+                 <option value="State Quota"> SQ - State Quota </option>
+                 <option value="SC"> SC - Scheduled Castes </option>
+                 <option value="ST"> ST - Scheduled Tribes </option>
+                 <option value="EWS"> EWS - Economically Weaker Sections </option>
+                 <option value="OBC"> OBC - Other Backward Classes  </option>
+             </select>
+           </div>
+        </div><br />
+        {/* SSC Marks */}
+        <div  className="form-group row">
+           <label for="SSC"  className="col-sm-4 col-form-label">SSC Marks: </label>
+           <div  className="col-sm-8">
+             <input type="ssc-marks"  className="form-control" id="SSC" placeholder="85.56" required />
+           </div>
+        </div><br />
+        {/* HSC Marks  */}
+        <div  className="form-group row">
+           <label for="HSC"  className="col-sm-4 col-form-label">HSC Marks: </label>
+           <div  className="col-sm-8">
+               <input type="hsc-marks"  className="form-control" id="HSC" placeholder="88.64" />
+           </div>
+        </div><br />
+        {/* MHTCET Marks */}
+        <div  className="form-group row">
+           <label for="MHTCET"  className="col-sm-4 col-form-label">MHTCET Marks: </label>
+           <div  className="col-sm-8">
+               <input type="mhtcet-marks"  className="form-control" id="MHTCET" placeholder="90.85" />
+           </div>
+        </div><br />
+        {/* JEE Marks Marks */}
+        <div  className="form-group row">
+           <label for="JEE"  className="col-sm-4 col-form-label">JEE Mains Marks: </label>
+           <div  className="col-sm-8">
+               <input type="jee-mains-marks"  className="form-control" id="JEE" placeholder="93.26" />
+           </div>
+        </div><br />
+        <button type="submit"  className="btn btn-primary">Submit</button>
+       </form>
+
+</body>
+</html>

@@ -6,7 +6,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer'
 import HomePage from './pages/HomePage';
 import FormInput from './pages/FormInput';
-import FormResult from './pages/FormResult';
+import FormOutput from './pages/FormOutput';
 
 const App = () => {
   return (
@@ -18,7 +18,7 @@ const App = () => {
               <Route path="/" element={<HomePage />} />
               <Route path="/home" element={<HomePage />} />
               <Route path="/form-input" element={<FormInput />} />
-              <Route path="/form-result" element={<FormResult />} />
+              <Route path="/form-result" element={<FormOutput />} />
             </Routes>
           </div>
         <Footer />
