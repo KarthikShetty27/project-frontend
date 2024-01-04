@@ -6,7 +6,6 @@ const FormOutput = () => {
     return (
       <div id="foutput">
           <h2>Form Pred-Result</h2>
-          <form></form>
       </div>
     );
   };

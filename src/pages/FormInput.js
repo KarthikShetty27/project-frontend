@@ -1,13 +1,56 @@
 // FormInput.js
-import React from 'react';
+import React, { useState }  from 'react';
 import './assets/css/styles.css';
 
 const FormInput = () => {
+  // Step 1: Initialize state variable for submissions
+  const [submissions, setSubmissions] = useState([]);
+
+  // Step 2: Create event handler function for form submission
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+  // Step 3: Gather form data
+  const formData = {
+      age: event.target.elements.Age.value,
+      socioeconomicBackground: event.target.elements.inputState.value,
+      sscMarks: event.target.elements.SSC.value,
+      hscMarks: event.target.elements.HSC.value,
+      mhtcetMarks: event.target.elements.MHTCET.value,
+      jeeMainsMarks: event.target.elements.JEE.value,
+    };
+
+    try {
+      const response = await fetch('http://your-flask-backend-url/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        console.log('Form data sent successfully');
+        // You can handle the response or redirect as needed
+      } else {
+        console.error('Failed to send form data');
+      }
+    } catch (error) {
+      console.error('Error sending form data:', error);
+    }
+
+    // Step 4: Update state with new submissions array
+    setSubmissions([...submissions, formData]);
+  };
+
+  // Step 5: Store JSON representation in a constant variable
+  const submissionsJSON = JSON.stringify(submissions, null, 2);
+
   return (
     <div id="finput">
       <h2>Form Details</h2>
       <div className='form-data'>
-        <form>
+        <form onSubmit={handleSubmit}>
          {/* Age */}
          <div  className="form-group row">
             <label for="Age"  className="col-sm-4 col-form-label">Age: </label>
@@ -66,9 +109,11 @@ const FormInput = () => {
          </div><br />
          <button type="submit"  className="btn btn-primary">Submit</button>
         </form>
+        <div>
+        <h3>Submissions:</h3>
+        <pre>{submissionsJSON}</pre>
+      </div>
       </div>
     </div>
   );
 };
-
-export default FormInput;
