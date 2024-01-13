@@ -21,7 +21,7 @@ const FormInput = () => {
     };
 
     try {
-      const response = await fetch('http://your-flask-backend-url/api/submit-form', {
+      const response = await fetch('http://127.0.0.1:5000/api/submit-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -30,14 +30,15 @@ const FormInput = () => {
       });
   
       if (response.ok) {
-        console.log('Form data sent successfully');
-        // You can handle the response or redirect as needed
-      } else {
-        console.error('Failed to send form data');
-      }
-    } catch (error) {
-      console.error('Error sending form data:', error);
-    }
+        const result = await response.json();
+        console.log('Prediction result:', result);
+        // Handle the result as needed (update state, display on the frontend, etc.)
+        } else {
+        console.error('Failed to get prediction result');
+        }
+      } catch (error) {
+        console.error('Error getting prediction result:', error);
+        }
 
     // Step 4: Update state with new submissions array
     setSubmissions([...submissions, formData]);
