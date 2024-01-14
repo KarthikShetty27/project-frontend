@@ -20,6 +20,15 @@ const FormInput = () => {
       jeeMainsMarks: event.target.elements.JEE.value,
     };
 
+  const formValueString = `Age: ${event.target.elements.Age.value}, 
+  Socioeconomic Background: ${event.target.elements.inputState.value}, 
+  SSC Marks: ${event.target.elements.SSC.value}, 
+  HSC Marks: ${event.target.elements.HSC.value}, 
+  MHTCET Marks: ${event.target.elements.MHTCET.value}, 
+  JEE Mains Marks: ${event.target.elements.JEE.value}`;
+
+    
+
     try {
       const response = await fetch('http://127.0.0.1:5000/api/submit-form', {
         method: 'POST',
@@ -119,4 +128,4 @@ const FormInput = () => {
   );
 };
 
-export default FormInput
+export { FormInput, formValueString };
