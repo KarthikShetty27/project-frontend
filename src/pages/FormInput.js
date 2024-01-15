@@ -11,46 +11,15 @@ const FormInput = () => {
     event.preventDefault();
 
   // Step 3: Gather form data
-  const formData = {
-      age: event.target.elements.Age.value,
-      socioeconomicBackground: event.target.elements.inputState.value,
-      sscMarks: event.target.elements.SSC.value,
-      hscMarks: event.target.elements.HSC.value,
-      mhtcetMarks: event.target.elements.MHTCET.value,
-      jeeMainsMarks: event.target.elements.JEE.value,
-    };
-
-  const formValueString = `Age: ${event.target.elements.Age.value}, 
-  Socioeconomic Background: ${event.target.elements.inputState.value}, 
-  SSC Marks: ${event.target.elements.SSC.value}, 
-  HSC Marks: ${event.target.elements.HSC.value}, 
-  MHTCET Marks: ${event.target.elements.MHTCET.value}, 
-  JEE Mains Marks: ${event.target.elements.JEE.value}`;
-
-    
-
-    try {
-      const response = await fetch('http://127.0.0.1:5000/api/submit-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-  
-      if (response.ok) {
-        const result = await response.json();
-        console.log('Prediction result:', result);
-        // Handle the result as needed (update state, display on the frontend, etc.)
-        } else {
-        console.error('Failed to get prediction result');
-        }
-      } catch (error) {
-        console.error('Error getting prediction result:', error);
-        }
+    const formValueString = `Age: ${event.target.elements.Age.value}, 
+                             Socioeconomic Background: ${event.target.elements.inputState.value}, 
+                             SSC Marks: ${event.target.elements.SSC.value}, 
+                             HSC Marks: ${event.target.elements.HSC.value}, 
+                             MHTCET Marks: ${event.target.elements.MHTCET.value}, 
+                             JEE Mains Marks: ${event.target.elements.JEE.value}`;    
 
     // Step 4: Update state with new submissions array
-    setSubmissions([...submissions, formData]);
+    setSubmissions([...submissions, formValueString]);
   };
 
   // Step 5: Store JSON representation in a constant variable
@@ -128,4 +97,4 @@ const FormInput = () => {
   );
 };
 
-export { FormInput, formValueString };
+export default FormInput;
