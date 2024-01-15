@@ -5,10 +5,13 @@ import './pages/assets/css/styles.css';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer'
 import HomePage from './pages/HomePage';
-import FormInput from './pages/FormInput';
+import { FormInput, submissionsJSON} from './pages/FormInput';
 import FormOutput from './pages/FormOutput';
 
 const App = () => {
+
+  console.log(submissionsJSON);
+
   return (
     <Router>
       <div>

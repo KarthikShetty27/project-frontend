@@ -2,28 +2,32 @@
 import React, { useState }  from 'react';
 import './assets/css/styles.css';
 
+let submissionsJSON;
+
 const FormInput = () => {
   // Step 1: Initialize state variable for submissions
   const [submissions, setSubmissions] = useState([]);
 
   // Step 2: Create event handler function for form submission
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
   // Step 3: Gather form data
-    const formValueString = `Age: ${event.target.elements.Age.value}, 
-                             Socioeconomic Background: ${event.target.elements.inputState.value}, 
-                             SSC Marks: ${event.target.elements.SSC.value}, 
-                             HSC Marks: ${event.target.elements.HSC.value}, 
-                             MHTCET Marks: ${event.target.elements.MHTCET.value}, 
-                             JEE Mains Marks: ${event.target.elements.JEE.value}`;    
+  const formValueString = {
+                            age: event.target.elements.Age.value,
+                            socioeconomicBackground: event.target.elements.inputState.value,
+                            sscMarks: event.target.elements.SSC.value,
+                            hscMarks: event.target.elements.HSC.value,
+                            mhtcetMarks: event.target.elements.MHTCET.value,
+                            jeeMainsMarks: event.target.elements.JEE.value,
+  };   
 
     // Step 4: Update state with new submissions array
     setSubmissions([...submissions, formValueString]);
   };
 
   // Step 5: Store JSON representation in a constant variable
-  const submissionsJSON = JSON.stringify(submissions, null, 2);
+  submissionsJSON = JSON.stringify(submissions, null, 2);
 
   return (
     <div id="finput">
@@ -97,4 +101,4 @@ const FormInput = () => {
   );
 };
 
-export default FormInput;
+export { FormInput, submissionsJSON};
