@@ -1,5 +1,5 @@
-npm install bootstrap
-npm install react-router-dom
+- npm install bootstrap
+- npm install react-router-dom
 
 
 
