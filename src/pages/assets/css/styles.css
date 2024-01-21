@@ -42,7 +42,7 @@
 /* CSS common for FormInput.js, FormOutput.js  Start */
 #finput, #foutput{
     width: 50%;
-    height: 540px;
+    height: 600px;
     padding: 20px;
     text-align: center;
     margin: 20px 20px ;
