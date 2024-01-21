@@ -5,12 +5,10 @@ import './pages/assets/css/styles.css';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer'
 import HomePage from './pages/HomePage';
-import { FormInput, submissionsJSON} from './pages/FormInput';
-import FormOutput from './pages/FormOutput';
+import Form from './pages/Form';
+import Result from './pages/Result';
 
 const App = () => {
-
-  console.log(submissionsJSON);
 
   return (
     <Router>
@@ -20,8 +18,8 @@ const App = () => {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/home" element={<HomePage />} />
-              <Route path="/form-input" element={<FormInput />} />
-              <Route path="/form-result" element={<FormOutput />} />
+              <Route path="/form-input" element={<Form />} />
+              <Route path="/form-result" element={<Result />} />
             </Routes>
           </div>
         <Footer />
