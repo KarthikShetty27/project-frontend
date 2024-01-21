@@ -1,121 +1,102 @@
 // Form.js
-import React, { useState }  from 'react';
-import './assets/css/styles.css';
-import IsValid from './IsValid'; // For validation of the form details
-import Result from './Result'; // For the result component
+import React, { useState } from 'react';
 
-const Form = () => {
-  const [formData, setFormData] = useState({
-    age: '',
-    seb: '',
-    sscMarks: '',
-    hscMarks: '',
-    mhtcetMarks: '',
-    jeeMarks: '',
-  });
+function Form() {
+  const [age, setAge] = useState('');
+  const [seb, setSeb] = useState('');
+  const [sscMarks, setSscMarks] = useState('');
+  const [hscMarks, setHscMarks] = useState('');
+  const [mhtcetMarks, setMhtcetMarks] = useState('');
+  const [jeeMainsMarks, setJeeMainsMarks] = useState('');
 
-  const [submissionStatus, setSubmissionStatus] = useState({
-    submitted: false,
-    resultMessage: '',
-  });
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [id]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Validate form data
-    const validationResult = IsValid(formData);
-
-    // Update submission status and result message
-    setSubmissionStatus({
-      submitted: true,
-      resultMessage: validationResult.message,
-  });
-
-    // If validation passed, send data to Flask backend
-    if (validationResult.isValid) {
-      // Code to send data to Flask backend goes here
-      // You can use fetch or any other method to send data to the backend
-      // Example: fetch('backend_url', { method: 'POST', body: JSON.stringify(formData) });
-    }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Form submitted!');
+    console.log(`Age: ${age}`);
+    console.log(`Socioeconomic Background: ${seb}`);
+    console.log(`SSC Marks: ${sscMarks}`);
+    console.log(`HSC Marks: ${hscMarks}`);
+    console.log(`MHTCET Marks: ${mhtcetMarks}`);
+    console.log(`JEE Mains Marks: ${jeeMainsMarks}`);
   };
 
   return (
-    <div id="finput">
-      <h2>Form Details</h2>
-      <div className='form-data'>
-        <form onSubmit={handleSubmit}>
-         {/* Age */}
-         <div  className="form-group row">
-            <label for="Age"  className="col-sm-4 col-form-label">Age: </label>
-            <div  className="col-sm-8">
-              <input type="age"  className="form-control" id="Age" placeholder="Between 19-26" required min="19" max="26" onChange={handleChange} value={formData.age} />
-              <div className="invalid-feedback">Please enter a valid age between 19 and 26.</div>
-            </div>
-         </div><br />
-         {/* SEB - Socioeconomic Background */}
-         <div  className="form-group row">
-            <label for="SEB"  className="col-sm-5 col-form-label">Socioeconomic Background: </label>
-            <div  className="col-sm-7">
-              <select id="inputState"  className="form-control" required onChange={handleChange} value={formData.age} >
-                  <option value=""> Select Menu </option>
-                  <option value="Open"> Open </option>
-                  <option value="State Quota"> SQ - State Quota </option>
-                  <option value="SC"> SC - Scheduled Castes </option>
-                  <option value="ST"> ST - Scheduled Tribes </option>
-                  <option value="EWS"> EWS - Economically Weaker Sections </option>
-                  <option value="OBC"> OBC - Other Backward Classes  </option>
-              </select>
-              <div className="invalid-feedback">Please select a socioeconomic background.</div>
-            </div>
-         </div><br />
-         {/* SSC Marks */}
-         <div  className="form-group row">
-            <label for="SSC"  className="col-sm-4 col-form-label">SSC Marks: </label>
-            <div  className="col-sm-8">
-              <input type="ssc-marks" step="0.01" className="form-control" id="SSC" placeholder="85.56" required  onChange={handleChange} value={formData.age} />
-              <div className="invalid-feedback">Please enter a valid SSC marks with 2 decimal places.</div>
-            </div>
-         </div><br />
-         {/* HSC Marks  */}
-         <div  className="form-group row">
-            <label for="HSC"  className="col-sm-4 col-form-label">HSC Marks: </label>
-            <div  className="col-sm-8">
-                <input type="hsc-marks" step="0.01" className="form-control" id="HSC" placeholder="88.64"  onChange={handleChange} value={formData.age} />
-                <div className="invalid-feedback">Please enter a valid HSC marks with 2 decimal places.</div>
-            </div>
-         </div><br />
-         {/* MHTCET Marks */}
-         <div  className="form-group row">
-            <label for="MHTCET"  className="col-sm-4 col-form-label">MHTCET Marks: </label>
-            <div  className="col-sm-8">
-                <input type="mhtcet-marks" step="0.01" className="form-control" id="MHTCET" placeholder="90.85"  onChange={handleChange} value={formData.age}  />
-                <div className="invalid-feedback">Please enter a valid MHTCET marks with 2 decimal places.</div>
-            </div>
-         </div><br />
-         {/* JEE Marks Marks */}
-         <div  className="form-group row">
-            <label for="JEE"  className="col-sm-4 col-form-label">JEE Mains Marks: </label>
-            <div  className="col-sm-8">
-                <input type="jee-mains-marks" step="0.01" className="form-control" id="JEE" placeholder="93.26"  onChange={handleChange} value={formData.age} />
-                <div className="invalid-feedback">Please enter a valid JEE Mains marks with 2 decimal places.</div>
-            </div>
-         </div><br />
-         <button type="submit"  className="btn btn-primary">Submit</button>
-        </form>
-        <div>
-        <h3>Submissions:</h3>
-        {submissionStatus.submitted && <Result resultMessage={submissionStatus.resultMessage} />}
-      </div>
-      </div>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <label>
+        Age:
+        <input
+          type="text"
+          value={age}
+          onChange={(event) => setAge(event.target.value)}
+          required
+        />
+      </label>
+      <br />
+      <label>
+        Socioeconomic Background:
+        <select
+          value={seb}
+          onChange={(event) => setSeb(event.target.value)}
+          required
+        >
+          <option value="">--Please select an option--</option>
+          <option value="Open">Open</option>
+          <option value="SQ - State Quota">SQ - State Quota</option>
+          <option value="SC - Scheduled Castes">SC - Scheduled Castes</option>
+          <option value="ST - Scheduled Tribes">ST - Scheduled Tribes</option>
+          <option value="EWS - Economically Weaker Sections">
+            EWS - Economically Weaker Sections
+          </option>
+          <option value="OBC - Other Backward Classes">
+            OBC - Other Backward Classes
+          </option>
+        </select>
+      </label>
+      <br />
+      <label>
+        SSC Marks:
+        <input
+          type="number"
+          step="0.01"
+          value={sscMarks}
+          onChange={(event) => setSscMarks(event.target.value)}
+          required
+        />
+      </label>
+      <br />
+      <label>
+        HSC Marks:
+        <input
+          type="number"
+          step="0.01"
+          value={hscMarks}
+          onChange={(event) => setHscMarks(event.target.value)}
+        />
+      </label>
+      <br />
+      <label>
+        MHTCET Marks:
+        <input
+          type="number"
+          step="0.01"
+          value={mhtcetMarks}
+          onChange={(event) => setMhtcetMarks(event.target.value)}
+        />
+      </label>
+      <br />
+      <label>
+        JEE Mains Marks:
+        <input
+          type="number"
+          step="0.01"
+          value={jeeMainsMarks}
+          onChange={(event) => setJeeMainsMarks(event.target.value)}
+        />
+      </label>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
   );
-};
+}
 
 export default Form;
