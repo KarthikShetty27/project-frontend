@@ -11,13 +11,40 @@ function Form() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Form submitted!');
-    console.log(`Age: ${age}`);
-    console.log(`Socioeconomic Background: ${seb}`);
-    console.log(`SSC Marks: ${sscMarks}`);
-    console.log(`HSC Marks: ${hscMarks}`);
-    console.log(`MHTCET Marks: ${mhtcetMarks}`);
-    console.log(`JEE Mains Marks: ${jeeMainsMarks}`);
+
+    const submitForm = async () => {
+      const formData = {
+        age: age,
+        socioeconomicBackground: seb,
+        sscMarks: sscMarks,
+        hscMarks: hscMarks,
+        mhtcetMarks: mhtcetMarks,
+        jeeMainsMarks: jeeMainsMarks,
+      };
+  
+      try {
+        const response = await fetch('http://127.0.0.1:5000/form-details', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+  
+        if (response.ok) {
+          console.log('Form submitted successfully!');
+          // Handle any further logic after successful submission
+        } else {
+          console.error('Failed to submit form');
+          // Handle the error, maybe show an error message to the user
+        }
+      } catch (error) {
+        console.error('Error during form submission:', error);
+        // Handle the error, maybe show an error message to the user
+      }
+    };
+  
+    submitForm();
   };
 
   return (

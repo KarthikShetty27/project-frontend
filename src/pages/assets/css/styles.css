@@ -42,21 +42,34 @@
 /* CSS common for FormInput.js, FormOutput.js  Start */
 #finput, #foutput{
     width: 50%;
-    height: 600px;
+    height: 560px;
     padding: 20px;
     text-align: center;
     margin: 20px 20px ;
 }
 
-/* Media Query for smallScreen */
-@media screen and (width < 1018px) {
+/* Media Query for meduimScreen */
+@media screen and (width < 1200px) {
     #finput, #foutput{
         border: 3px solid cyan;
-        background-color: blue;
         width: 100%;
-        height: auto;
+        height: 610px;
         display: inline-block;
         margin: 10px 0px;
+    }
+}
+/* Media Query for smallScreen */
+@media screen and (993px < width < 1020px) {
+    #finput, #foutput{
+        height: 530px;
+        margin-left: 8.5px;
+        margin-right: 8.5px;
+    }
+}
+/* Media Query for mobileScreen */
+@media screen and (width < 993px) {
+    #finput, #foutput{
+        height: auto;
     }
 }
 /* ***************** */
