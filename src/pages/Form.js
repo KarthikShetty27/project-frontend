@@ -1,5 +1,6 @@
 // Form.js
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function Form() {
   const [age, setAge] = useState('');
@@ -9,11 +10,10 @@ function Form() {
   const [mhtcetMarks, setMhtcetMarks] = useState('');
   const [jeeMainsMarks, setJeeMainsMarks] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const submitForm = async () => {
-      const formData = {
+    const formData = {
         age: age,
         socioeconomicBackground: seb,
         sscMarks: sscMarks,
@@ -23,31 +23,17 @@ function Form() {
       };
   
       try {
-        const response = await fetch('http://127.0.0.1:5000/form-details', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-  
-        if (response.ok) {
-          console.log('Form submitted successfully!');
-          // Handle any further logic after successful submission
-        } else {
-          console.error('Failed to submit form');
-          // Handle the error, maybe show an error message to the user
-        }
+        const response = await axios.post('http://127.0.0.1:5000/form-data', formData);
+        
+        console.log('Form submitted successfully!');
+        console.log('Response:', response.data);
       } catch (error) {
         console.error('Error during form submission:', error);
-        // Handle the error, maybe show an error message to the user
       }
     };
-  
-    submitForm();
   };
 
-  return (
+   return (
     <div id="finput">
       <h2> Form Details </h2>
       <div className='form-data'>
@@ -56,7 +42,7 @@ function Form() {
           <div className="form-group row">
             <label for="Age"  className="col-sm-4 col-form-label">Age: </label>
             <div className="col-sm-8">
-              <input className="form-control" id="Age" type="text" placeholder="85.56" value={age} onChange={(event) => setAge(event.target.value)} required />
+              <input className="form-control" id="Age" type="text" placeholder="19-26" value={age} onChange={(event) => setAge(event.target.value)} required />
             </div>
           </div>
           <br />
@@ -113,6 +99,5 @@ function Form() {
       </div>
     </div>
   );
-}
 
 export default Form;
