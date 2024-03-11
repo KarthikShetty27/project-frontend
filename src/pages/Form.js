@@ -29,13 +29,16 @@ function Form() {
 
     try {
       // Submit Form Data
-      const response = await axios.post('http://127.0.0.1:5000/submit-form', formData);
+      await axios.post('http://127.0.0.1:5000/submit-form', formData);
       console.log('Form submitted successfully!');
-      console.log('Response:', response.data);
+      // console.log('Response:', response.data);
 
       // Make prediction request
       const predictResponse = await axios.post('http://127.0.0.1:5000/predict', formData);
-      console.log('Prediction Response:', predictResponse.data);
+      const branchPredictions = predictResponse.data.branchPredictions;
+      const collegePredictions = predictResponse.data.collegePredictions;
+      const combinedPredictions = branchPredictions.concat(collegePredictions);
+      console.log('Prediction Response:', combinedPredictions);
 
       // Set the prediction result in the state
       setResult(predictResponse.data);
