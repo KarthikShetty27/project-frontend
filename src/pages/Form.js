@@ -47,7 +47,7 @@ function Form() {
       setSubmitted(true);
 
       // Redirect to the result page
-      navigate('/form-result');
+      navigate('/form-result',{ state: { combinedPredictions } });
     } catch (error) {
       console.error('Error during form submission:', error);
     }
