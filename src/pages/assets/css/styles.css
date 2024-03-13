@@ -23,7 +23,7 @@
 }
 /* ***************** */
 
-/* CSS common for Home.js, FormInput.js, FormOutput.js  Start */
+/* CSS common for Home.js, Form.js, Result.js  Start */
 #home, #finput, #foutput {
     border: 1px dashed black;
     width: auto;
@@ -39,13 +39,13 @@
 }
 /* ***************** */
 
-/* CSS common for FormInput.js, FormOutput.js  Start */
+/* CSS common for Form.js, Result.js  Start */
 #finput, #foutput{
     width: 50%;
     height: 560px;
     padding: 20px;
     text-align: center;
-    margin: 20px 20px ;
+    margin: 20px auto ;
 }
 
 /* Media Query for meduimScreen */
@@ -74,7 +74,7 @@
 }
 /* ***************** */
 
-/* CSS for FormInput.js  Start */
+/* CSS for Form.js  Start */
 #finput{
     background-color:yellow;
     font-family: serif;
@@ -107,7 +107,7 @@ border-color: #004d99;
 }
 /* ***************** */
 
-/* CSS for FormOutput.js  Start */
+/* CSS for Result.js  Start */
 #foutput {
     background-color: orange;
 }

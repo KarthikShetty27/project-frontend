@@ -3,7 +3,7 @@ import React from 'react';
 import './assets/css/styles.css'; // Import the CSS from styles.css file
 import Home from './Home';// Import the Home section of the page
 import Form from './Form';// Import the FormInput section of the page
-import Result from './Result';// Import the FormOutput section of the page
+// import Result from './Result';// Import the FormOutput section of the page
 
 const HomePage = () => {
 
@@ -12,7 +12,7 @@ const HomePage = () => {
       <Home />
       <div className='Form-IO'>
         <Form />
-        <Result />
+        {/* <Result /> */}
       </div>
     </div>
 

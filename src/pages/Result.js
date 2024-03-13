@@ -28,8 +28,8 @@ console.log('College:', {collegePredictions});
   return (
     <div id="foutput">
       <h2>Form Prediction Result</h2>
-      <p>College Predictions: {collegePredictions}</p>
-      <p>Branch Predictions: {branchPredictions}</p>
+      <p> College Predictions: {collegePredictions}</p>
+      <p> Branch Predictions: {branchPredictions}</p>
     </div>
   );
 };
