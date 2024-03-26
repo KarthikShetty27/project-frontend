@@ -33,9 +33,16 @@
 /* CSS for Home.js  Start */
 #home {
     background-color: greenyellow;
-    height: 600px;
-    padding: 20px;
-    margin: 10px 0px;
+    height: auto;
+    padding: 40px;
+    margin: 10px 90px;
+    text-align: justify;
+}
+#line {
+    margin: 30px auto;
+    border: 12px dotted black;
+    border-bottom: none;
+    width: 100px;    
 }
 /* ***************** */
 
@@ -50,6 +57,9 @@
 
 /* Media Query for meduimScreen */
 @media screen and (width < 1200px) {
+    #home{
+        padding: 40px;
+    }
     #finput, #foutput{
         border: 3px solid cyan;
         width: 100%;
@@ -60,6 +70,9 @@
 }
 /* Media Query for smallScreen */
 @media screen and (993px < width < 1020px) {
+    #home{
+        padding: 40px;
+    }
     #finput, #foutput{
         height: 530px;
         margin-left: 8.5px;
@@ -68,6 +81,9 @@
 }
 /* Media Query for mobileScreen */
 @media screen and (width < 993px) {
+    #home{
+        padding: 40px;
+    }
     #finput, #foutput{
         height: auto;
     }
