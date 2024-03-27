@@ -1,13 +1,13 @@
 /* CSS for App.js Start */
 .container{
-    border: 5px solid teal;
+    /* border: 5px solid teal; */
     margin: 10px auto;
 }
 /* ***************** */
 
 /* CSS for HomePage.js [About + Input + Output] Start */
 #home-page{
-    border: 1px dashed teal;
+    /* border: 1px dashed teal; */
     padding: 12px 0px;
 }
 
@@ -25,14 +25,14 @@
 
 /* CSS common for Home.js, Form.js, Result.js  Start */
 #home, #finput, #foutput {
-    border: 1px dashed black;
+    /* border: 1px dashed black; */
     width: auto;
 }
 /* ***************** */
 
 /* CSS for Home.js  Start */
 #home {
-    background-color: greenyellow;
+    background-color: ivory;
     height: auto;
     padding: 40px;
     margin: 10px 90px;
@@ -40,7 +40,7 @@
 }
 #line {
     margin: 30px auto;
-    border: 12px dotted black;
+    border: 12px dotted brown;
     border-bottom: none;
     width: 100px;    
 }
@@ -59,9 +59,10 @@
 @media screen and (width < 1200px) {
     #home{
         padding: 40px;
+        margin: 20px auto;
     }
     #finput, #foutput{
-        border: 3px solid cyan;
+        /* border: 3px solid cyan; */
         width: 100%;
         height: 610px;
         display: inline-block;
@@ -78,6 +79,9 @@
         margin-left: 8.5px;
         margin-right: 8.5px;
     }
+    #finput{
+        margin: 10px 84px;
+    }
 }
 /* Media Query for mobileScreen */
 @media screen and (width < 993px) {
@@ -87,17 +91,26 @@
     #finput, #foutput{
         height: auto;
     }
+    #finput{
+        margin: 10px 24px;
+    }
+}
+/* Media Query for mobileScreen */
+@media screen and (width < 768px) {
+    #finput{
+        margin: 10px auto;
+    }
 }
 /* ***************** */
 
 /* CSS for Form.js  Start */
 #finput{
-    background-color:yellow;
+    background-color: wheat;
     font-family: serif;
 }
 
 .form-data{
-    border: 1px salmon solid;
+    /* border: 1px salmon solid; */
     margin: 10px 0px;
     padding: 20px;
     color: black;
@@ -125,7 +138,7 @@ border-color: #004d99;
 
 /* CSS for Result.js  Start */
 #foutput {
-    background-color: orange;
+    background-color: whitesmoke;
 }
 /* ***************** */
 
